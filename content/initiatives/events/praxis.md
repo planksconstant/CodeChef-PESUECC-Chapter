@@ -9,6 +9,22 @@ highlights:
   - "Fast ideation"
   - "Demo-first judging"
   - "Production mindset"
+prizePool: "Rs. 35,000+"
+prizes:
+  - position: "1st Position"
+    amount: "Rs. 15,000"
+  - position: "2nd Position"
+    amount: "Rs. 10,000"
+  - position: "3rd Position"
+    amount: "Rs. 7,000"
+  - position: "Best 1st Year Team"
+    amount: "Rs. 3,000"
+sponsors:
+  - "Zintoo Texas"
+  - "Rolls"
+  - "Patiala Dhaba"
+  - "Mitthu’s"
+
 accent: "04"
 image: "/events/praxis2.webp"
 gallery:
@@ -70,6 +86,10 @@ timeline:
     title: "Winner Announcements & Vote of Thanks"
     tag: "Closing Ceremony"
     description: "The winners are announced, followed by the vote of thanks and closing of the event."
+    stats:
+      - label: "Prize Pool"
+        value: "₹35,000"
+     
 mentors:
   - name: "Aditya Raj"
     role: "Lead Architect"
@@ -85,39 +105,54 @@ mentors:
     linkedin: "https://linkedin.com"
 
 winners:
-  - team: "Team Enigma"
+  - team: "Lawgorithm "
     achievement: "1st Place Champions"
-    heroImage: "/dev-team.jpg"
+    heroImage: "/events/praxis-p1.webp"
     members:
-      - name: "Alex Chen"
+      - name: "Harika S"
         linkedin: "https://linkedin.com"
-      - name: "Sarah Jenkins"
+      - name: "Meghana Kallepalli"
         linkedin: "https://linkedin.com"
-      - name: "Rahul Patel"
+      - name: "Harika K"
         linkedin: "https://linkedin.com"
     experience: "The combination of algorithmic thinking and sprinting across campus was unparalleled. We spent 20 minutes debugging Dijkstra while physically standing in the rain at the final checkpoint. It pushed us to our absolute limits!"
   
-  - team: "Runtime Terrors"
+  - team: "sem4back"
     achievement: "2nd Place Runner Ups"
-    heroImage: "/dev-team.jpg"
+    heroImage: "/events/praxis-p2.webp"
     members:
-      - name: "David Kim"
+      - name: "Hemanth Kumar R"
         linkedin: "https://linkedin.com"
-      - name: "Priya Singh"
+      - name: "I.V.Thanvitha"
         linkedin: "https://linkedin.com"
+      - name: "Sanjana Chunduri"
+        linkedin: "https://linkedin.com"
+      - name: "Pranay Shah"
+        linkedin: "https://linkedin.com"
+
     experience: "We lost our lead because we forgot a semicolon in the cryptography round, but making up the time during the campus sprint was thrilling."
 
-  - team: "O(1) Braincells"
+  - team: "bazooka"
     achievement: "3rd Place"
-    heroImage: "/dev-team.jpg"
+    heroImage: "/events/praxis-p3.webp"
     members:
-      - name: "Michael Chang"
+      - name: "Vanshitha Soma"
         linkedin: "https://linkedin.com"
-      - name: "Emily Watson"
+      - name: "Lakshita Negi"
         linkedin: "https://linkedin.com"
-      - name: "Zack Taylor"
+      - name: "Ayesha Moghis "
         linkedin: "https://linkedin.com"
     experience: "Getting onto the podium was incredible. The hardware node reverse engineering completely blew our minds. Best event of the year!"
+  - team: "SingleThread"
+    achievement: "Best First Year Team"
+    heroImage: "/events/praxis-run.webp"
+    members:
+      - name: "Sreevathsan S"
+        linkedin: "https://linkedin.com"
+      
+
+    experience: "We lost our lead because we forgot a semicolon in the cryptography round, but making up the time during the campus sprint was thrilling."
+
 ---
 
 
