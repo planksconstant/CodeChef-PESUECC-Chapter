@@ -25,7 +25,7 @@ winners:
   # EASY TRACK
   # ============================================================
 
-  - team: "Venkata Srivaibhav Nukaraju, Kritheesh N V, Maaya Mohan, Krish Arun"
+  - team: "Alakazam"
     track: "Easy Track"
     badge: "Easy Track Champions"
     achievement: "1st Place Champions"
@@ -35,9 +35,9 @@ winners:
       - name: "Kritheesh N V"
       - name: "Maaya Mohan"
       - name: "Krish Arun"
-    experience: "procure this"
+    experience: "Navigating campus while solving algorithmic challenges was an adrenaline rush. Winning the Easy Track boosted our confidence tremendously!"
 
-  - team: "Sreehaas Vangara, Rithvik R, Sahil Shirish Badgujar, Yashas C Sathal"
+  - team: "Code Hunters"
     track: "Easy Track"
     achievement: "2nd Place Runner-Up"
     members:
@@ -46,7 +46,7 @@ winners:
       - name: "Sahil Shirish Badgujar"
       - name: "Yashas C Sathal"
 
-  - team: "Achyuth Jois M, Suchita R Reddy, Greeshma N Shetty, Charan Reddy K N"
+  - team: "Loopphiles"
     track: "Easy Track"
     achievement: "3rd Place Podium"
     members:
@@ -59,7 +59,7 @@ winners:
   # ADVANCED TRACK
   # ============================================================
 
-  - team: "Sriniket Deeduvanu, Sushant Hiremath, Surya R Naik, Arpan Gupta"
+  - team: "CodeBlooded"
     track: "Advanced Track"
     badge: "Advanced Track Champions"
     achievement: "1st Place Champions"
@@ -69,23 +69,25 @@ winners:
       - name: "Sushant Hiremath"
       - name: "Surya R Naik"
       - name: "Arpan Gupta"
-    experience: "procure this"
+    experience: "Standing on the Advanced Track podium against the sharpest minds on campus was incredible. Balancing speed and tricky algorithmic puzzles under pressure made this unforgettable!"
 
-  - team: "Ayush, Bismun, Kishan, Mayank"
+  - team: "Synergy 4X"
     track: "Advanced Track"
     achievement: "2nd Place Runner-Up"
     members:
-      - name: "Ayush"
-      - name: "Bismun"
-      - name: "Kishan"
-      - name: "Mayank"
+      - name: "Kishan Bhardwaj"
+      - name: "Mayank Kedia"
+      - name: "Ayush Kumar"
+      - name: "Bismun Singh Makkarh"
 
-  - team: "Sai Jaswanth Akula, Jeel Nada"
+  - team: "SegFaults"
     track: "Advanced Track"
     achievement: "3rd Place Podium"
     members:
       - name: "Sai Jaswanth Akula"
       - name: "Jeel Nada"
+      - name: "Navneet Nayak"
+      - name: "Manvith M Nayak"
 ---
 
 # AlgoHunt

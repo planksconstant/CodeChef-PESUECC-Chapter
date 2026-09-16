@@ -210,25 +210,25 @@
       "category": "Learning Pipeline",
       "status": "Cohort Program",
       "cadence": "Weekly foundations",
-      "description": "A guided problem-solving pipeline for students moving from syntax comfort to interview-ready competitive thinking.",
+      "description": "A structured learning program that takes students through the fundamentals of problem solving, data structures, algorithms, and coding patterns through guided sessions. LeetCode 101 focuses on building strong foundations, developing systematic approaches to unfamiliar problems, and gradually preparing participants for competitive programming, technical interviews, and real-world engineering challenges.",
       "highlights": [
         "Pattern-first sessions",
         "Mentor-led reviews",
         "Editorial practice"
       ],
       "accent": "02",
-      "image": "/eventsCompr/leetcode101-pushkar.webp",
+      "image": "/events/leetcode101-pushkar.webp",
       "gallery": [
         {
-          "src": "/eventsCompr/leetcode101-pushkar1.webp",
+          "src": "/events/leetcode101-pushkar1.webp",
           "caption": "Mentor-led pattern sessions"
         },
         {
-          "src": "/eventsCompr/leetcode101.webp",
+          "src": "/events/leetcode101.webp",
           "caption": "Weekly practice cohorts"
         },
         {
-          "src": "/eventsCompr/leetcode101-sid.webp",
+          "src": "/events/leetcode101-sid.webp",
           "caption": "Editorial review circles"
         }
       ],
@@ -236,8 +236,8 @@
       "timeline": [],
       "mentors": [],
       "winners": [],
-      "cardBrief": "LeetCode 101 is our flagship mentorship program designed to help students build a strong foundation in data structures, algorithms, and problem-solving. What is LeetCode 101? LeetCode 101 is a guided learning program focused on developing the problem-solving...",
-      "detailedExplanation": "LeetCode 101 is our flagship mentorship program designed to help students build a strong foundation in data structures, algorithms, and problem-solving.\n\n## What is LeetCode 101?\n\nLeetCode 101 is a guided learning program focused on developing the problem-solving habits required for competitive programming and technical interviews.\n\nInstead of treating problem solving as a collection of tricks to memorize, the program focuses on understanding the patterns behind problems and learning how to recognize those patterns when encountering something new.\n\nThe sessions introduce students to online judges such as LeetCode and Codeforces and gradually move from fundamental concepts toward more structured problem solving.\n\n## What We Focus On\n\n### Data Structures\n\nWe build a practical understanding of the data structures that appear frequently in programming problems.\n\nThe emphasis is not simply on learning what a data structure is, but on understanding **when and why** it should be used.\n\nStudents learn to reason about structures such as arrays, strings, stacks, queues, hash maps, trees, and graphs through problems and examples.\n\n### Problem-Solving Patterns\n\nA major part of LeetCode 101 is learning to recognize recurring patterns.\n\nRather than memorizing individual solutions, students learn to ask:\n\n- What information do I need to keep track of?\n- Can I reduce the number of operations?\n- Can a known data structure simplify the problem?\n- Is there a relationship between the current state and previous states?\n- How does my approach scale as the input grows?\n\n### Complexity and Optimization\n\nA correct solution is only the beginning.\n\nWe compare different approaches and examine their time and space complexity. Students learn to identify unnecessary work and understand why an optimized solution performs better.\n\n## Learning Through Problems\n\nThe program is built around solving problems rather than passively watching explanations.\n\nA typical problem-solving cycle is:\n\n1. Understand the problem.\n2. Break it into smaller parts.\n3. Develop possible approaches.\n4. Implement a solution.\n5. Analyze its complexity.\n6. Compare alternative approaches.\n7. Review the reasoning behind the solution.\n\nThis creates a repeatable process for approaching unfamiliar problems.\n\n## Mentor-Led Reviews\n\nMentorship is an important part of the program.\n\nDuring reviews, solutions are discussed beyond simply asking whether they pass. We look at the chosen approach, implementation, complexity, clarity, and possible improvements.\n\nThe objective is to turn every solved problem into a learning opportunity.\n\n## Editorial Practice\n\nUnderstanding a solution is different from being able to explain it.\n\nLeetCode 101 introduces students to reading and writing problem editorials, with an emphasis on explaining the key observation, describing the algorithm, and reasoning about its complexity.\n\n## From Foundations to Competitive Programming\n\nLeetCode 101 provides the foundation for students who want to continue deeper into competitive programming.\n\nThe focus is on developing habits that make future learning easier:\n\n- consistent problem solving\n- recognizing algorithmic patterns\n- analyzing complexity\n- learning from failed approaches\n- reviewing and improving solutions\n- communicating technical reasoning\n\nThe goal is not simply to complete a fixed list of problems. It is to develop a problem-solving mindset that students can carry into more advanced challenges.\n\n## Start With the Problem, Not the Solution\n\nProblem solving is a skill that improves through deliberate practice.\n\nEvery difficult problem is an opportunity to identify a new pattern, question an existing approach, and become better at breaking down unfamiliar problems.\n\nLeetCode 101 provides the structure, mentorship, and practice environment to make that process consistent."
+      "cardBrief": "LeetCode 101 is our flagship mentorship program designed to help students build a strong foundation in data structures, algorithms, and problem-solving.\r \r What is LeetCode 101?\r \r   LeetCode 101 is a guided learning program focused on developing the...",
+      "detailedExplanation": "LeetCode 101 is our flagship mentorship program designed to help students build a strong foundation in data structures, algorithms, and problem-solving.\r\n\r\n## What is LeetCode 101?\r\n\r\n  LeetCode 101 is a guided learning program focused on developing the problem-solving habits required for competitive programming and technical interviews.\r\n\r\n  Instead of treating problem solving as a collection of tricks to memorize, the program focuses on understanding the patterns behind problems and learning how to recognize those patterns when encountering something new.\r\n\r\n## What We Focus On\r\n\r\n### Data Structures\r\n\r\n  We build a practical understanding of the data structures that appear frequently in programming problems. The emphasis is not simply on learning what a data structure is, but on understanding when and why it should be used.\r\n\r\n### Problem-Solving Patterns\r\n\r\n  A major part of LeetCode 101 is learning to recognize recurring patterns. Students learn to break unfamiliar problems down, identify useful structures, and develop systematic approaches rather than memorizing individual solutions.\r\n\r\n### Complexity and Optimization\r\n\r\n  Students compare different approaches and examine their time and space complexity, learning how to identify unnecessary work and improve solutions as input sizes grow.\r\n\r\n## Learning Through Problems\r\n\r\n  The program is built around solving problems rather than passively watching explanations. Students learn to understand the problem, break it into smaller parts, develop possible approaches, implement a solution, analyze its complexity, and review alternative approaches.\r\n\r\n## Mentor-Led Reviews\r\n\r\n  Mentorship is a core part of the program. Solutions are reviewed beyond simply checking whether they pass, with attention given to the chosen approach, implementation, complexity, clarity, and possible improvements.\r\n## Editorial Practice\r\n\r\n  Students learn how to read and write problem editorials by identifying the key observation, explaining the algorithm, and reasoning about its complexity.\r\n\r\n## From Foundations to Competitive Programming\r\n\r\n  LeetCode 101 provides the foundation for students who want to continue into deeper competitive programming and technical interview preparation. The goal is to develop consistent problem-solving habits, recognize algorithmic patterns, analyze complexity, learn from failed approaches, and communicate technical reasoning clearly.\r\n\r\n## Start With the Problem, Not the Solution\r\n\r\n  Problem solving is a skill that improves through deliberate practice. Every difficult problem is an opportunity to identify a new pattern, question an existing approach, and become better at breaking down unfamiliar problems.\r\n\r\n  LeetCode 101 provides the structure, mentorship, and practice environment to make that process consistent."
     },
     {
       "id": "algohunt",
@@ -245,25 +245,25 @@
       "category": "Gamified Algorithmic Event",
       "status": "Flagship Contest",
       "cadence": "Campus-scale hunt",
-      "description": "A physical-digital contest where algorithms unlock checkpoints, clues, and leaderboard momentum across campus.",
+      "description": "A campus-scale algorithmic challenge that combines competitive programming, problem solving, and real-world exploration into a single gamified experience. Participants solve progressively challenging algorithmic tasks to unlock checkpoints, discover clues, and advance through the hunt, with performance, speed, and strategic thinking shaping their position on the leaderboard.",
       "highlights": [
         "Puzzle-backed routes",
         "Live scoring",
         "Team-based solving"
       ],
       "accent": "03",
-      "image": "/eventsCompr/algohunt3.webp",
+      "image": "/events/algohunt3.webp",
       "gallery": [
         {
-          "src": "/eventsCompr/algohunt1.webp",
+          "src": "/events/algohunt1.webp",
           "caption": "The Arena"
         },
         {
-          "src": "/eventsCompr/algohunt2.webp",
+          "src": "/events/algohunt2.webp",
           "caption": "Team solving under pressure"
         },
         {
-          "src": "/eventsCompr/algohunt3.webp",
+          "src": "/events/algohunt3.webp",
           "caption": "The team"
         }
       ],
@@ -272,11 +272,11 @@
       "mentors": [],
       "winners": [
         {
-          "team": "Venkata Srivaibhav Nukaraju, Kritheesh N V, Maaya Mohan, Krish Arun",
+          "team": "Alakazam",
           "achievement": "1st Place Champions",
           "track": "Easy Track",
           "badge": "Easy Track Champions",
-          "heroImage": "/dev-team.jpg",
+          "heroImage": "/events/algohunt-winner-eas.webp",
           "members": [
             {
               "name": "Venkata Srivaibhav Nukaraju"
@@ -291,10 +291,10 @@
               "name": "Krish Arun"
             }
           ],
-          "experience": ""
+          "experience": "Navigating campus while solving algorithmic challenges was an adrenaline rush. Winning the Easy Track boosted our confidence tremendously!"
         },
         {
-          "team": "Sreehaas Vangara, Rithvik R, Sahil Shirish Badgujar, Yashas C Sathal",
+          "team": "Code Hunters",
           "achievement": "2nd Place Runner-Up",
           "track": "Easy Track",
           "heroImage": "/dev-team.jpg",
@@ -315,7 +315,7 @@
           "experience": ""
         },
         {
-          "team": "Achyuth Jois M, Suchita R Reddy, Greeshma N Shetty, Charan Reddy K N",
+          "team": "Loopphiles",
           "achievement": "3rd Place Podium",
           "track": "Easy Track",
           "heroImage": "/dev-team.jpg",
@@ -336,11 +336,11 @@
           "experience": ""
         },
         {
-          "team": "Sriniket Deeduvanu, Sushant Hiremath, Surya R Naik, Arpan Gupta",
+          "team": "CodeBlooded",
           "achievement": "1st Place Champions",
           "track": "Advanced Track",
           "badge": "Advanced Track Champions",
-          "heroImage": "/dev-team.jpg",
+          "heroImage": "/events/algohunt-winner-adv.webp",
           "members": [
             {
               "name": "Sriniket Deeduvanu"
@@ -355,31 +355,31 @@
               "name": "Arpan Gupta"
             }
           ],
-          "experience": ""
+          "experience": "Standing on the Advanced Track podium against the sharpest minds on campus was incredible. Balancing speed and tricky algorithmic puzzles under pressure made this unforgettable!"
         },
         {
-          "team": "Ayush, Bismun, Kishan, Mayank",
+          "team": "Synergy 4X",
           "achievement": "2nd Place Runner-Up",
           "track": "Advanced Track",
           "heroImage": "/dev-team.jpg",
           "members": [
             {
-              "name": "Ayush"
+              "name": "Kishan Bhardwaj"
             },
             {
-              "name": "Bismun"
+              "name": "Mayank Kedia"
             },
             {
-              "name": "Kishan"
+              "name": "Ayush Kumar"
             },
             {
-              "name": "Mayank"
+              "name": "Bismun Singh Makkarh"
             }
           ],
           "experience": ""
         },
         {
-          "team": "Sai Jaswanth Akula, Jeel Nada",
+          "team": "SegFaults",
           "achievement": "3rd Place Podium",
           "track": "Advanced Track",
           "heroImage": "/dev-team.jpg",
@@ -389,13 +389,19 @@
             },
             {
               "name": "Jeel Nada"
+            },
+            {
+              "name": "Navneet Nayak"
+            },
+            {
+              "name": "Manvith M Nayak"
             }
           ],
           "experience": ""
         }
       ],
-      "cardBrief": "AlgoHunt transforms competitive programming into a high-octane physical reality. AlgoHunt happens during Maya (The Official Fest of PESUECC). AlgoHunt is a CP event designed in the form of a treasure hunt. Half of the team searches for a key around the campus...",
-      "detailedExplanation": "AlgoHunt transforms competitive programming into a high-octane physical reality.\n\nAlgoHunt happens during Maya (The Official Fest of PESUECC). AlgoHunt is a CP event designed in the form of a treasure hunt. Half of the team searches for a key around the campus while the other members work on a competitive programming problem.\n\nThere is an **Easy Track** for beginners and an **Advanced Track** for experienced competitive programmers."
+      "cardBrief": "AlgoHunt\r \r AlgoHunt transforms competitive programming into a high-octane physical reality.\r \r AlgoHunt was conducted by CodeChef PESU-ECC as part of MAAYA, the official fest of PES University, Electronic City Campus. The event combined competitive...",
+      "detailedExplanation": "# AlgoHunt\r\n\r\n**AlgoHunt transforms competitive programming into a high-octane physical reality.**\r\n\r\nAlgoHunt was conducted by **CodeChef PESU-ECC** as part of **MAAYA, the official fest of PES University, Electronic City Campus**. The event combined competitive programming with a campus-wide treasure hunt, creating a format where solving code was only half the challenge.\r\n\r\n## What Is AlgoHunt?\r\n\r\nWhat happens when **logic meets chaos, speed meets strategy, and code meets the thrill of a treasure hunt?**\r\n\r\nYou get **AlgoHunt** — MAAYA's most electrifying tech event.\r\n\r\nHeld on **11th October 2024** at **PES University, Electronic City Campus**, AlgoHunt brought together **100+ passionate coders and explorers** for a competition that demanded both technical ability and teamwork.\r\n\r\nThe event was structured across **two competitive tracks**:\r\n\r\n- **Easy Track** — designed for beginners and participants taking their first steps into competitive programming.\r\n- **Advanced Track** — designed for experienced competitive programmers looking for a more challenging contest.\r\n\r\n## Coding Meets the Treasure Hunt\r\n\r\nAlgoHunt was built around a simple idea: **the entire team could not rely on just one kind of skill.**\r\n\r\nDuring the event, teams split their efforts between two parallel challenges. **Half of the team searched for a key hidden somewhere around the campus, while the remaining members worked on a competitive programming problem.**\r\n\r\nThis combination meant that teams had to continuously balance:\r\n\r\n- **Problem-solving**\r\n- **Speed**\r\n- **Exploration**\r\n- **Team coordination**\r\n- **Creative thinking**\r\n\r\nA strong performance required more than writing correct code. Teams had to communicate quickly, divide responsibilities effectively, and make decisions under pressure.\r\n\r\n## The Hunt\r\n\r\nAcross **7 intense rounds**, participants moved between programming challenges and physical clues spread throughout the competition.\r\n\r\nThe rounds brought together:\r\n\r\n> **Cryptic clues + Competitive programming + Campus exploration + Teamwork**\r\n\r\nParticipants decoded riddles, solved programming challenges, searched for clues, and raced against the clock as they attempted to stay ahead of the competition.\r\n\r\nEvery round introduced another opportunity to gain an advantage — but also another opportunity to fall behind.\r\n\r\n## Two Tracks, One Challenge\r\n\r\n### Easy Track\r\n\r\nThe **Easy Track** gave beginners an opportunity to experience competitive programming in a more accessible and engaging format.\r\n\r\nRather than being limited to a conventional coding contest, participants were introduced to programming challenges alongside the excitement of the physical hunt.\r\n\r\n### Advanced Track\r\n\r\nThe **Advanced Track** pushed experienced competitive programmers further, combining more demanding programming problems with the same fast-paced treasure-hunt format.\r\n\r\nFor these teams, technical proficiency had to be matched with speed and coordination.\r\n\r\n## Beyond Competitive Programming\r\n\r\nAlgoHunt was designed to test skills that extend beyond solving a programming problem.\r\n\r\nParticipants had to constantly adapt to changing situations, communicate with teammates, and decide how to divide their time and effort between the coding challenge and the physical hunt.\r\n\r\nThe event encouraged participants to:\r\n\r\n- **Think differently** when approaching problems.\r\n- **Collaborate creatively** under time pressure.\r\n- **Adapt quickly** as new clues and challenges appeared.\r\n- **Balance strategy and execution** throughout the competition.\r\n\r\n## The Experience\r\n\r\nWith **100+ participants**, **7 rounds**, **two competitive tracks**, and a **₹15,000 prize pool**, AlgoHunt created an atmosphere that was as competitive as it was energetic.\r\n\r\nFrom cryptic clues to brain-twisting code, every stage demanded a different combination of skills. The campus itself became part of the challenge, turning what would normally be a coding contest into an experience that participants had to physically navigate as a team.\r\n\r\n## More Than a Competition\r\n\r\nAlgoHunt was more than a competition — it was an experience that blended **coding brilliance with on-ground strategy**.\r\n\r\nBy bringing competitive programming out of the conventional contest environment and into a physical treasure hunt, AlgoHunt captured the spirit of experimentation, collaboration, and problem-solving that defines **CodeChef PESU-ECC**.\r\n\r\n**Code. Hunt. Collaborate. Conquer.**\r\n\r\nThat was AlgoHunt."
     },
     {
       "id": "praxis",
@@ -403,117 +409,103 @@
       "category": "Rapid AI / Build Sprint",
       "status": "Hackathon Engine",
       "cadence": "Sprint format",
-      "description": "A high-pressure build sprint for shipping AI-assisted products, prototypes, and technical demos under real constraints.",
+      "description": "A high-intensity hackathon designed around rapid experimentation, AI-assisted development, and end-to-end product building. Participants work under real-world constraints to transform ideas into functional prototypes, using modern AI tools and engineering practices to design, build, test, and present technical solutions within a focused sprint.",
       "highlights": [
         "Fast ideation",
         "Demo-first judging",
         "Production mindset"
       ],
       "accent": "04",
-      "image": "/eventsCompr/praxis2.webp",
+      "image": "/events/praxis2.webp",
       "gallery": [
         {
-          "src": "/eventsCompr/praxis1.webp",
+          "src": "/events/praxis1.webp",
           "caption": "Hall Of Fame"
         },
         {
-          "src": "/eventsCompr/praxis2.webp",
+          "src": "/events/praxis2.webp",
           "caption": "Working Under pressure"
         },
         {
-          "src": "/eventsCompr/praxis3.webp",
+          "src": "/events/praxis3.webp",
           "caption": "Progress Report"
         }
       ],
       "href": "/initiatives/praxis",
       "timeline": [
         {
-          "date": "09:00 AM",
-          "title": "Check-in & Breakfast",
+          "date": "07:30 AM",
+          "title": "Registration",
           "tag": "Registration",
-          "description": "Participants arrive, verify their registration, collect their badges, and get energized with a hearty breakfast before the intense competition begins.",
-          "stats": [
-            {
-              "label": "Expected Arrival",
-              "value": "800+"
-            },
-            {
-              "label": "Duration",
-              "value": "60 mins"
-            }
-          ],
-          "features": [
-            "QR Code quick scanning",
-            "Swag bag distribution"
-          ]
-        },
-        {
-          "date": "10:00 AM",
-          "title": "Opening Ceremony & Problem Release",
-          "tag": "Ceremony",
-          "description": "The official kickoff. We will explain the rules, introduce the judges, and reveal the primary encrypted problem statement that unlocks the first physical checkpoint.",
-          "image": "/eventsCompr/praxisopen.webp",
-          "stats": [
-            {
-              "label": "Venue",
-              "value": "Main Auditorium"
-            }
-          ],
-          "features": [
-            "Keynote by Lead Architect",
-            "Live demonstration of the leaderboard platform"
-          ]
-        },
-        {
-          "date": "10:30 AM",
-          "title": "Checkpoint 1: The Cryptography Node",
-          "tag": "Hacking",
-          "description": "Teams disperse across campus to their first physical node. They must decrypt a cipher to unlock the next GPS coordinates.",
-          "stats": [
-            {
-              "label": "Difficulty",
-              "value": "Medium"
-            }
-          ],
-          "features": [
-            "RSA decryption puzzles",
-            "Physical lock boxes"
-          ]
-        },
-        {
-          "date": "01:00 PM",
-          "title": "Lunch & Networking",
-          "tag": "Break",
-          "description": "A mandatory cool-down period where teams can refuel, discuss strategies with mentors, and check the global standings.",
+          "description": "Participants arrive and complete the registration process.",
           "stats": [],
           "features": []
         },
         {
-          "date": "02:00 PM",
-          "title": "Checkpoint 2: The Hardware Node",
-          "tag": "Hacking",
-          "description": "The final sprint. Teams must interface their laptops with custom ESP32 hardware modules placed around the campus to execute their final algorithms.",
-          "image": "/dev-team.jpg",
-          "stats": [
-            {
-              "label": "Elimination",
-              "value": "Bottom 50%"
-            }
-          ],
-          "features": [
-            "Arduino / ESP32 interfacing",
-            "Reverse engineering binaries"
-          ]
+          "date": "08:00 AM",
+          "title": "Introduction & Lamp Lighting",
+          "tag": "Ceremony",
+          "description": "The event begins with an introduction followed by the traditional lamp lighting ceremony.",
+          "stats": [],
+          "features": []
         },
         {
-          "date": "05:00 PM",
-          "title": "Closing Ceremony & Winners",
-          "tag": "Ceremony",
-          "description": "The leaderboard freezes. We announce the top 3 teams, distribute prizes, and conclude the event with closing remarks from our sponsors.",
+          "date": "09:00 AM",
+          "title": "Coding Round 1 & Mentoring",
+          "tag": "Coding",
+          "description": "Participants begin the first coding round while mentors provide guidance and support throughout the session.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "12:00 PM",
+          "title": "Lunch Break",
+          "tag": "Break",
+          "description": "Participants take a break for lunch.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "01:00 PM",
+          "title": "Coding Round 2",
+          "tag": "Coding",
+          "description": "Participants compete in the second coding round and work on the given problem statements.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "03:00 PM",
+          "title": "Coding Round 2 Evaluation",
+          "tag": "Evaluation",
+          "description": "Submissions from the second coding round are evaluated to determine the top-performing teams.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "04:00 PM",
+          "title": "Snacks",
+          "tag": "Break",
+          "description": "Participants take a short break for snacks.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "04:30 PM",
+          "title": "Final Presentation of Top 7",
+          "tag": "Finals",
+          "description": "The top seven teams present their final solutions and ideas.",
+          "stats": [],
+          "features": []
+        },
+        {
+          "date": "05:10 PM",
+          "title": "Winner Announcements & Vote of Thanks",
+          "tag": "Closing Ceremony",
+          "description": "The winners are announced, followed by the vote of thanks and closing of the event.",
           "stats": [
             {
               "label": "Prize Pool",
-              "value": "$5,000"
+              "value": "₹35,000"
             }
           ],
           "features": []
@@ -541,64 +533,84 @@
       ],
       "winners": [
         {
-          "team": "Team Enigma",
+          "team": "Lawgorithm ",
           "achievement": "1st Place Champions",
-          "heroImage": "/dev-team.jpg",
+          "heroImage": "/events/praxis-p1.webp",
           "members": [
             {
-              "name": "Alex Chen",
+              "name": "Harika S",
               "linkedin": "https://linkedin.com"
             },
             {
-              "name": "Sarah Jenkins",
+              "name": "Meghana Kallepalli",
               "linkedin": "https://linkedin.com"
             },
             {
-              "name": "Rahul Patel",
+              "name": "Harika K",
               "linkedin": "https://linkedin.com"
             }
           ],
           "experience": "The combination of algorithmic thinking and sprinting across campus was unparalleled. We spent 20 minutes debugging Dijkstra while physically standing in the rain at the final checkpoint. It pushed us to our absolute limits!"
         },
         {
-          "team": "Runtime Terrors",
+          "team": "sem4back",
           "achievement": "2nd Place Runner Ups",
-          "heroImage": "/dev-team.jpg",
+          "heroImage": "/events/praxis-p2.webp",
           "members": [
             {
-              "name": "David Kim",
+              "name": "Hemanth Kumar R",
               "linkedin": "https://linkedin.com"
             },
             {
-              "name": "Priya Singh",
+              "name": "I.V.Thanvitha",
+              "linkedin": "https://linkedin.com"
+            },
+            {
+              "name": "Sanjana Chunduri",
+              "linkedin": "https://linkedin.com"
+            },
+            {
+              "name": "Pranay Shah",
               "linkedin": "https://linkedin.com"
             }
           ],
           "experience": "We lost our lead because we forgot a semicolon in the cryptography round, but making up the time during the campus sprint was thrilling."
         },
         {
-          "team": "O(1) Braincells",
+          "team": "bazooka",
           "achievement": "3rd Place",
-          "heroImage": "/dev-team.jpg",
+          "heroImage": "/events/praxis-p3.webp",
           "members": [
             {
-              "name": "Michael Chang",
+              "name": "Vanshitha Soma",
               "linkedin": "https://linkedin.com"
             },
             {
-              "name": "Emily Watson",
+              "name": "Lakshita Negi",
               "linkedin": "https://linkedin.com"
             },
             {
-              "name": "Zack Taylor",
+              "name": "Ayesha Moghis ",
               "linkedin": "https://linkedin.com"
             }
           ],
           "experience": "Getting onto the podium was incredible. The hardware node reverse engineering completely blew our minds. Best event of the year!"
+        },
+        {
+          "team": "SingleThread",
+          "achievement": "Best First Year Team",
+          "heroImage": "/events/praxis-run.webp",
+          "members": [
+            {
+              "name": "Sreevathsan S",
+              "linkedin": "https://linkedin.com"
+            }
+          ],
+          "experience": "We lost our lead because we forgot a semicolon in the cryptography round, but making up the time during the campus sprint was thrilling."
         }
       ],
-      "cardBrief": "Praxis  The official hackathon conducted by Codechef PESU ECC participants are given a problem statement on which they need to work on the problem statements have an intersection of real life problems and AIML the whole point is to solve problems by having...",
-      "detailedExplanation": "Praxis \nThe official hackathon conducted by Codechef PESU ECC participants are given a problem statement on which they need to work on the problem statements have an intersection of real life problems and AIML the whole point is to solve problems by having AIML as a backbone"
+      "cardBrief": "About Praxis\r \r Praxis is the official hackathon conducted by CodeChef PESU ECC.\r \r The event gives participants a problem statement based on real-life challenges. Teams then work on building solutions to these problems, with Artificial Intelligence and...",
+      "detailedExplanation": "## About Praxis\r\n\r\nPraxis is the official hackathon conducted by CodeChef PESU ECC.\r\n\r\nThe event gives participants a problem statement based on real-life challenges. Teams then work on building solutions to these problems, with **Artificial Intelligence and Machine Learning (AI/ML) serving as the backbone of their approach**.\r\n\r\n## What Is Praxis?\r\n\r\nPraxis is centered around turning ideas into working solutions.\r\n\r\nParticipants are presented with problem statements that have an intersection between **real-world problems and AI/ML**. The objective is not simply to build a prototype, but to think about how AI/ML can be used as a core part of solving the problem.\r\n\r\nThe hackathon gives participants an environment where they can take a problem, explore possible approaches, build a solution, and turn their ideas into something tangible.\r\n\r\n## The Problem Statements\r\n\r\nThe foundation of Praxis is its problem statements.\r\n\r\nEach problem is designed around a real-life challenge and requires participants to think beyond conventional solutions. Teams need to understand the problem, identify where AI/ML can add value, and develop a solution around that intersection.\r\n\r\nThis makes the hackathon as much about **understanding the problem** as it is about building the technology.\r\n\r\n## AI/ML as the Backbone\r\n\r\nA central idea behind Praxis is using AI/ML as a backbone for solving problems.\r\n\r\nRather than treating AI/ML as an isolated feature added at the end of a project, participants explore how it can contribute to the core solution.\r\n\r\nThis encourages teams to think about:\r\n\r\n* How AI/ML can address the underlying problem\r\n* Where intelligent systems can improve an existing process\r\n* How a real-world challenge can be translated into a technical solution\r\n* How an idea can be turned into a functional prototype\r\n\r\n## From Idea to Solution\r\n\r\nPraxis is about taking a problem statement and turning it into something that works.\r\n\r\nThe process involves understanding the challenge, brainstorming possible solutions, selecting an approach, and building a working implementation.\r\n\r\nTeams get the opportunity to move through the entire journey from **problem → idea → implementation → solution**.\r\n\r\n## Building Under Pressure\r\n\r\nAs a hackathon, Praxis challenges participants to build within a limited amount of time.\r\n\r\nThis means teams have to make practical decisions about what to build, how to approach the problem, and where to focus their effort.\r\n\r\nThe result is an environment that encourages rapid experimentation, collaboration, and execution.\r\n\r\n## The Goal\r\n\r\nThe goal of Praxis is to encourage students to approach real-world problems through technology and explore the possibilities of AI/ML as a foundation for building solutions.\r\n\r\nIt is an opportunity to move beyond simply learning concepts and put them into practice by building something that addresses a meaningful problem."
     }
   ],
   "systems": [
