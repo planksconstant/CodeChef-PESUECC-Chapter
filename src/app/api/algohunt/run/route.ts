@@ -33,7 +33,10 @@ export async function POST(req: Request): Promise<NextResponse> {
   // Rate limit (contract §15)
   const rateLimited = await enforceRateLimits([
     [`ah:run:team:${team.id}`, 20, 60_000],
+<<<<<<< HEAD
     [`ah:run:ip:${ip}`, 60, 60_000],
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
   ]);
   if (rateLimited) return rateLimited;
 
@@ -98,6 +101,7 @@ export async function POST(req: Request): Promise<NextResponse> {
       memoryBytes: firstTc?.memory_bytes ?? result.peak_memory_bytes,
     });
   } catch (e) {
+<<<<<<< HEAD
     if (process.env.NODE_ENV === "development") {
       console.warn("[algohunt:run] Judge offline in dev mode; simulating run output.");
       const nums = stdin.trim().split(/\s+/).map(Number).filter((n) => !isNaN(n));
@@ -112,6 +116,8 @@ export async function POST(req: Request): Promise<NextResponse> {
         memoryBytes: 1048576,
       });
     }
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
     console.error("[algohunt:run]", e);
     return fail("JUDGE_UNAVAILABLE");
   }

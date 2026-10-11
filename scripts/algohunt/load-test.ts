@@ -172,7 +172,11 @@ async function submitOnce(team: TeamCreds): Promise<SubmitStat> {
       code = data.code as string | undefined;
     } catch {}
     return { durationMs, status: res.status, verdict, code };
+<<<<<<< HEAD
   } catch (_e) {
+=======
+  } catch (e) {
+>>>>>>> aafc26a (chore: work on algohunt dash)
     return { durationMs: Date.now() - start, status: -1, code: "NETWORK_ERROR" };
   }
 }

@@ -31,7 +31,11 @@ interface SubmissionListProps {
   refresh?: number;
 }
 
+<<<<<<< HEAD
 export default function SubmissionList({ stageNumber, refresh = 0 }: SubmissionListProps) {
+=======
+export default function SubmissionList({ stageNumber, teamCode: _teamCode, refresh = 0 }: SubmissionListProps) {
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const [submissions, setSubmissions] = useState<SubmissionWithCode[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,6 +43,11 @@ export default function SubmissionList({ stageNumber, refresh = 0 }: SubmissionL
 
   useEffect(() => {
     let cancelled = false;
+<<<<<<< HEAD
+=======
+    setLoading(true);
+    setError(null);
+>>>>>>> aafc26a (chore: work on algohunt dash)
     fetch("/api/algohunt/submissions")
       .then((r) => r.json())
       .then((data) => {

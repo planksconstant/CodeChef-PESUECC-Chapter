@@ -62,6 +62,7 @@ export default async function SubmissionsPage() {
   const cur = progress.current;
 
   return (
+<<<<<<< HEAD
     <div className="mx-auto max-w-3xl px-4 py-8">
       <div className="mb-4 flex items-center justify-between">
         <Link href="/algohunt/challenge" className="mecha-btn h-8 text-xs font-semibold">
@@ -80,6 +81,21 @@ export default async function SubmissionsPage() {
         </p>
         <SubmissionList stageNumber={cur.stage.stageNumber} teamCode={team.teamCode} />
       </MechaPanel>
+=======
+    <div className="mx-auto max-w-2xl px-4 py-6">
+      <div className="mb-4 flex items-center justify-between">
+        <h1 className="font-display text-lg font-bold text-chocolate dark:text-cream">
+          Your submissions for Question {cur.stage.stageNumber}
+        </h1>
+        <Link href="/algohunt/challenge" className="text-sm text-bronze hover:underline">
+          ← Back to Question
+        </Link>
+      </div>
+      <p className="mb-4 text-xs text-charcoal/50 dark:text-cream/50">
+        Earlier questions can&apos;t be reopened. Only the current question&apos;s submissions are shown.
+      </p>
+      <SubmissionList stageNumber={cur.stage.stageNumber} teamCode={team.teamCode} />
+>>>>>>> aafc26a (chore: work on algohunt dash)
     </div>
   );
 }

@@ -27,6 +27,7 @@ export interface TeamProgress {
   finished: boolean;
 }
 
+<<<<<<< HEAD
 export async function getTeamProgress(_ctx: TeamContext): Promise<TeamProgress> {
   // In development, return mock stage 1 progress so the workspace can be rendered
   if (process.env.NODE_ENV === "development") {
@@ -78,6 +79,13 @@ export async function getTeamProgress(_ctx: TeamContext): Promise<TeamProgress> 
     };
   }
 
+=======
+/**
+ * Get a team's full progress across all stages.
+ * TODO(M1): Replace with real DB query implementation.
+ */
+export async function getTeamProgress(_ctx: TeamContext): Promise<TeamProgress> {
+>>>>>>> aafc26a (chore: work on algohunt dash)
   // M1 stub: returns empty progress until M1 lands.
   return {
     stages: [],

@@ -10,8 +10,17 @@ import {
 } from "react";
 import CodeEditor from "@/components/cp-arena/CodeEditor";
 import MechaPanel from "@/components/cp-arena/MechaPanel";
+<<<<<<< HEAD
 import { ARENA_LANGUAGES, STARTER_CODE, type LanguageId } from "@/components/cp-arena/mockData";
 import type { ChallengeView, SubmitResult } from "@/lib/algohunt/types";
+=======
+import Link from "@/components/AppLink";
+import { ARENA_LANGUAGES, STARTER_CODE, type LanguageId } from "@/components/cp-arena/mockData";
+import { COPY } from "@/lib/algohunt/copy";
+import type { ChallengeView, SubmitResult } from "@/lib/algohunt/types";
+import type { SubmissionView } from "@/lib/algohunt/types";
+import { formatIST } from "@/lib/algohunt/format";
+>>>>>>> aafc26a (chore: work on algohunt dash)
 import VerdictPanel from "./VerdictPanel";
 import SubmissionList from "./SubmissionList";
 
@@ -28,7 +37,11 @@ export interface ChallengeWorkspaceProps {
   teamCode: string;
   statement: ReactNode;
   totalStages: number;
+<<<<<<< HEAD
   solvedCount?: number;
+=======
+  solvedCount: number;
+>>>>>>> aafc26a (chore: work on algohunt dash)
 }
 
 export default function ChallengeWorkspace({
@@ -36,10 +49,15 @@ export default function ChallengeWorkspace({
   teamCode,
   statement,
   totalStages,
+<<<<<<< HEAD
+=======
+  solvedCount,
+>>>>>>> aafc26a (chore: work on algohunt dash)
 }: ChallengeWorkspaceProps) {
   const { stageNumber, isFinal, languages, samples, solved: initialSolved } = view;
 
   // ── Language & code state ─────────────────────────────────────────────
+<<<<<<< HEAD
   const defaultLangId = ((languages[0]?.id as LanguageId) ?? "cpp");
   const codeKey = (lang: string) => `ah:code-editor:${teamCode}:${stageNumber}:${lang}`;
   const langKey = `ah:lang:${teamCode}`;
@@ -50,6 +68,30 @@ export default function ChallengeWorkspace({
 
   const [language, setLanguage] = useState<LanguageId>(defaultLangId);
   const [code, setCode] = useState<string>(() => loadCode(defaultLangId));
+=======
+  const codeKey = (lang: string) => `ah:code-editor:${teamCode}:${stageNumber}:${lang}`;
+  const langKey = `ah:lang:${teamCode}`;
+
+  const getDefaultLang = (): LanguageId => {
+    try {
+      const stored = localStorage.getItem(langKey);
+      if (stored && languages.some((l) => l.id === stored)) return stored as LanguageId;
+    } catch {}
+    return (languages[0]?.id as LanguageId) ?? "cpp";
+  };
+
+  const loadCode = (lang: string): string => {
+    try {
+      return localStorage.getItem(codeKey(lang)) ?? STARTER_CODE[lang as LanguageId] ?? "";
+    } catch {
+      return STARTER_CODE[lang as LanguageId] ?? "";
+    }
+  };
+
+  const [language, setLanguage] = useState<LanguageId>("cpp");
+  const [code, setCode] = useState<string>(() => STARTER_CODE["cpp"]);
+  const [hydrated, setHydrated] = useState(false);
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const [tab, setTab] = useState<Tab>("problem");
   const [splitPct, setSplitPct] = useState(50);
   const [customInput, setCustomInput] = useState(samples[0]?.input ?? "");
@@ -72,6 +114,7 @@ export default function ChallengeWorkspace({
 
   const splitRef = useRef<HTMLDivElement>(null);
 
+<<<<<<< HEAD
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
       try {
@@ -103,10 +146,25 @@ export default function ChallengeWorkspace({
       } catch {}
     });
     return () => cancelAnimationFrame(raf);
+=======
+  // ── Hydrate from localStorage after mount ─────────────────────────────
+  useEffect(() => {
+    const lang = getDefaultLang();
+    setLanguage(lang);
+    setCode(loadCode(lang));
+    try {
+      const raw = localStorage.getItem(SPLIT_KEY);
+      const n = raw == null ? NaN : Number(raw);
+      if (Number.isFinite(n)) setSplitPct(clamp(n));
+    } catch {}
+    setHydrated(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+>>>>>>> aafc26a (chore: work on algohunt dash)
   }, []);
 
   // ── Debounced code autosave ───────────────────────────────────────────
   useEffect(() => {
+<<<<<<< HEAD
     const t = setTimeout(() => {
       try {
         localStorage.setItem(`ah:code-editor:${teamCode}:${stageNumber}:${language}`, code);
@@ -114,6 +172,16 @@ export default function ChallengeWorkspace({
     }, 500);
     return () => clearTimeout(t);
   }, [code, language, stageNumber, teamCode]);
+=======
+    if (!hydrated) return;
+    const t = setTimeout(() => {
+      try {
+        localStorage.setItem(codeKey(language), code);
+      } catch {}
+    }, 500);
+    return () => clearTimeout(t);
+  }, [code, language, hydrated]);
+>>>>>>> aafc26a (chore: work on algohunt dash)
 
   // ── Persist split ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -131,12 +199,16 @@ export default function ChallengeWorkspace({
       localStorage.setItem(codeKey(language), code);
       localStorage.setItem(langKey, lang);
     } catch {}
+<<<<<<< HEAD
     let nextCode = STARTER_CODE[lang] ?? "";
     try {
       const stored = localStorage.getItem(codeKey(lang));
       if (stored) nextCode = stored;
     } catch {}
     setCode(nextCode);
+=======
+    setCode(loadCode(lang));
+>>>>>>> aafc26a (chore: work on algohunt dash)
     setLanguage(lang);
   };
 
@@ -245,6 +317,10 @@ export default function ChallengeWorkspace({
   }, [running, solved, pendingId, language, code, stageNumber]);
 
   // ── Verdict or connection error ────────────────────────────────────────
+<<<<<<< HEAD
+=======
+  const submitFailed = verdict && !(verdict as unknown as { ok?: boolean }).ok === false;
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const connectionError = verdict && (verdict as unknown as SubmitResult).submission === null;
 
   // ── Render ────────────────────────────────────────────────────────────
@@ -261,8 +337,13 @@ export default function ChallengeWorkspace({
       className="relative flex min-h-0 flex-1 flex-col gap-1 p-1.5 lg:flex-row lg:items-stretch"
       style={{ "--ah-left": `${splitPct}%` } as CSSProperties}
     >
+<<<<<<< HEAD
       {/* ═══════ Panel A: Problem & Submissions (left on desktop, tabs on mobile) ═══════ */}
       <div className={`relative h-[45vh] w-full shrink-0 lg:h-full lg:w-[var(--ah-left)] min-h-0 ${tab === "code" ? "hidden lg:block" : "block"}`}>
+=======
+      {/* ═══════ Panel A: Problem (left on desktop, tab on mobile) ═══════ */}
+      <div className="relative h-[40vh] w-full shrink-0 lg:h-full lg:w-[var(--ah-left)]">
+>>>>>>> aafc26a (chore: work on algohunt dash)
         <div className="absolute inset-0">
           <MechaPanel className="h-full" bodyClassName="flex h-full flex-col overflow-hidden">
             {/* Mobile tabs */}
@@ -284,10 +365,14 @@ export default function ChallengeWorkspace({
                 Description
               </button>
               <button type="button" onClick={() => setTab("result")} className={`lc-tab ${tab === "result" ? "lc-tab--active" : ""}`}>
+<<<<<<< HEAD
                 Result & Submissions
                 {(running || verdict || runResult) && (
                   <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-bronze" />
                 )}
+=======
+                Submissions
+>>>>>>> aafc26a (chore: work on algohunt dash)
               </button>
             </div>
 
@@ -296,15 +381,24 @@ export default function ChallengeWorkspace({
               {tab === "problem" && (
                 <div
                   data-lenis-prevent
+<<<<<<< HEAD
                   className="h-full overflow-y-auto px-6 py-6 arena-prose"
+=======
+                  className="h-full overflow-y-auto px-5 py-5"
+>>>>>>> aafc26a (chore: work on algohunt dash)
                 >
                   {statement}
                 </div>
               )}
 
               {/* Result tab (submissions + run output + verdict) */}
+<<<<<<< HEAD
               {tab === "result" && (
                 <div data-lenis-prevent className="h-full overflow-y-auto px-4 py-4">
+=======
+              {(tab === "result" || tab === "code") && (
+                <div data-lenis-prevent className="h-full overflow-y-auto px-4 py-4 lg:block" style={{ display: tab === "result" ? undefined : "none" }}>
+>>>>>>> aafc26a (chore: work on algohunt dash)
                   {/* Busy indicator */}
                   {running && (
                     <div
@@ -363,17 +457,31 @@ export default function ChallengeWorkspace({
         className="hidden w-1.5 cursor-col-resize rounded-full bg-hairline transition-colors hover:bg-bronze/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bronze lg:block"
       />
 
+<<<<<<< HEAD
       {/* ═══════ Panel B: Editor + controls (right on desktop, Code tab on mobile) ═══════ */}
       <div className={`min-h-0 flex-1 flex-col gap-1 ${tab === "code" ? "flex" : "hidden"} lg:flex`}>
         {/* Editor panel */}
         <div className="relative min-h-[260px] flex-1 lg:min-h-0">
+=======
+      {/* ═══════ Panel B: Editor + controls (right on desktop) ═══════ */}
+      <div
+        className={`flex min-h-0 flex-1 flex-col gap-1 ${tab === "code" || true ? "" : "hidden"} lg:flex`}
+        style={{ display: (tab === "code" || typeof window === "undefined") ? undefined : "none" }}
+      >
+        {/* Always show editor on desktop */}
+        <div className="hidden flex-1 flex-col lg:flex">
+>>>>>>> aafc26a (chore: work on algohunt dash)
           <MechaPanel className="h-full" bodyClassName="flex h-full flex-col">
             {/* Editor toolbar */}
             <div className="flex h-10 shrink-0 items-center gap-2 border-b border-hairline px-3">
               <select
                 value={language}
                 onChange={(e) => changeLanguage(e.target.value as LanguageId)}
+<<<<<<< HEAD
                 className="mecha-input h-7 min-w-0 max-w-[160px] text-xs font-mono"
+=======
+                className="mecha-input h-7 min-w-0 max-w-[160px] text-xs"
+>>>>>>> aafc26a (chore: work on algohunt dash)
                 aria-label="Select programming language"
               >
                 {languageOptions.map((l) => (
@@ -385,6 +493,7 @@ export default function ChallengeWorkspace({
                 Q{stageNumber}/{totalStages}
               </span>
             </div>
+<<<<<<< HEAD
             <div className="relative min-h-0 flex-1">
               <div className="absolute inset-0 p-1" data-lenis-prevent>
                 <CodeEditor
@@ -395,11 +504,21 @@ export default function ChallengeWorkspace({
                   fullscreen
                 />
               </div>
+=======
+            <div className="min-h-0 flex-1">
+              <CodeEditor
+                value={code}
+                onChange={setCode}
+                language={language}
+                lockClipboard={false}
+              />
+>>>>>>> aafc26a (chore: work on algohunt dash)
             </div>
           </MechaPanel>
         </div>
 
         {/* Custom input + Run/Submit */}
+<<<<<<< HEAD
         <MechaPanel bodyClassName="flex flex-col shrink-0">
           <div className="flex h-8 shrink-0 items-center justify-between border-b border-hairline px-3">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-charcoal/50 dark:text-cream/50">
@@ -408,10 +527,18 @@ export default function ChallengeWorkspace({
             <span className="text-[11px] text-charcoal/40 dark:text-cream/40">
               Run uses this input · Submit always tests hidden cases
             </span>
+=======
+        <MechaPanel bodyClassName="flex flex-col">
+          <div className="flex h-10 shrink-0 items-center gap-2 border-b border-hairline px-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-charcoal/50 dark:text-cream/50">
+              Custom Input
+            </span>
+>>>>>>> aafc26a (chore: work on algohunt dash)
           </div>
           <textarea
             value={customInput}
             onChange={(e) => setCustomInput(e.target.value)}
+<<<<<<< HEAD
             rows={2}
             placeholder="Custom test input (leave empty for the first sample)"
             className="min-h-[50px] max-h-[100px] resize-y bg-transparent px-3 py-2 font-mono text-xs text-chocolate outline-none dark:text-cream"
@@ -445,6 +572,60 @@ export default function ChallengeWorkspace({
             )}
           </div>
         </MechaPanel>
+=======
+            rows={3}
+            placeholder="Custom test input (leave empty for the first sample)"
+            className="min-h-[60px] resize-none bg-transparent px-3 py-2 font-mono text-xs text-chocolate outline-none dark:text-cream"
+            aria-label="Custom test input"
+          />
+          <div className="flex shrink-0 items-center gap-2 border-t border-hairline px-3 py-2">
+            <button
+              type="button"
+              onClick={run}
+              disabled={runBtnDisabled}
+              className="mecha-btn h-9 min-w-[72px] text-sm disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {running && busyLabel === "Running…" ? "Running…" : "Run"}
+            </button>
+            <button
+              type="button"
+              onClick={() => submit()}
+              disabled={submitBtnDisabled}
+              className="mecha-btn mecha-btn--primary h-9 min-w-[96px] text-sm disabled:cursor-not-allowed disabled:opacity-60"
+              title="Submit (Ctrl+Enter)"
+              aria-label={solved ? "Question already solved" : "Submit solution"}
+            >
+              {solved ? "Solved ✓" : running ? "Judging…" : "Submit"}
+            </button>
+          </div>
+        </MechaPanel>
+
+        {/* Mobile-only editor (shown under code tab) */}
+        <div className="lg:hidden">
+          <MechaPanel bodyClassName="flex flex-col">
+            <div className="flex h-10 shrink-0 items-center gap-2 border-b border-hairline px-3">
+              <select
+                value={language}
+                onChange={(e) => changeLanguage(e.target.value as LanguageId)}
+                className="mecha-input h-7 min-w-0 max-w-[160px] text-xs"
+                aria-label="Select programming language"
+              >
+                {languageOptions.map((l) => (
+                  <option key={l.id} value={l.id}>{l.label}</option>
+                ))}
+              </select>
+            </div>
+            <div style={{ minHeight: "55vh" }}>
+              <CodeEditor
+                value={code}
+                onChange={setCode}
+                language={language}
+                lockClipboard={false}
+              />
+            </div>
+          </MechaPanel>
+        </div>
+>>>>>>> aafc26a (chore: work on algohunt dash)
       </div>
     </div>
   );

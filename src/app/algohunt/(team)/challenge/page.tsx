@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import Image from "next/image";
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
 import { redirect } from "next/navigation";
 import { getCurrentTeam } from "@/server/algohunt/teamSession";
 import { getTeamProgress } from "@/server/algohunt/access";
@@ -112,10 +115,54 @@ export default async function ChallengePage() {
   }
 
   const challengeSolved = cur.progress?.challengeSolved ?? false;
+<<<<<<< HEAD
+=======
+
+  // ── CODE_PENDING: solved but waiting for a QR code ──
+  if (challengeSolved && !cur.stage.isFinal) {
+    const view = toChallengeView(sc, { solved: true });
+    const statement = <ProblemStatement challenge={toChallengeContent(sc.challenge)} />;
+    return (
+      <div className="flex flex-col">
+        {/* Solved banner */}
+        <div className="border-b border-green-500/30 bg-green-500/10 px-4 py-3 sm:px-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">✅</span>
+                <span className="font-semibold text-green-700 dark:text-green-400">
+                  Question {cur.stage.stageNumber} solved!
+                </span>
+              </div>
+              <Link
+                href="/algohunt/code"
+                className="mecha-btn mecha-btn--primary text-center"
+              >
+                Enter a QR code →
+              </Link>
+            </div>
+            <p className="mt-1 text-sm text-green-600 dark:text-green-300/80">{COPY.accepted}</p>
+          </div>
+        </div>
+
+        {/* Workspace with submit disabled */}
+        <ChallengeWorkspace
+          view={view}
+          teamCode={team.teamCode}
+          statement={statement}
+          totalStages={progress.totalStages}
+          solvedCount={progress.solvedCount}
+        />
+      </div>
+    );
+  }
+
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const view = toChallengeView(sc, { solved: challengeSolved });
   const statement = <ProblemStatement challenge={toChallengeContent(sc.challenge)} />;
 
   return (
+<<<<<<< HEAD
     <div className="fixed inset-0 z-[60] flex flex-col bg-cream dark:bg-[#0f0b07]">
       {/* ══════════ Top Navbar (48px) ══════════ */}
       <header className="relative z-30 flex h-12 shrink-0 items-center justify-between gap-3 border-b border-hairline bg-white/90 px-3 backdrop-blur dark:bg-panel/90 sm:px-4">
@@ -144,13 +191,40 @@ export default async function ChallengePage() {
           </span>
           {/* Progress dots */}
           <div className="ml-2 hidden items-center gap-1 sm:flex" aria-label="Question progress">
+=======
+    <div className="flex flex-col">
+      {/* Header strip */}
+      <div className="border-b border-hairline bg-white/90 px-4 py-2 backdrop-blur dark:bg-panel/90 sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-sm font-semibold text-charcoal/60 dark:text-cream/60">
+              Question {cur.stage.stageNumber} of {progress.totalStages}
+            </span>
+            {cur.stage.isFinal && (
+              <span className="mecha-chip bg-bronze/15 text-bronze text-xs font-bold uppercase tracking-wider">
+                Final Question
+              </span>
+            )}
+            <span className="font-semibold text-chocolate dark:text-cream">{sc.challenge.title}</span>
+          </div>
+          {/* Progress dots */}
+          <div className="flex items-center gap-1" aria-label="Question progress">
+>>>>>>> aafc26a (chore: work on algohunt dash)
             {progress.stages.map((s) => {
               const isCurrent = s.stage.stageNumber === cur.stage.stageNumber;
               const isDone = s.state === "COMPLETED";
               return (
                 <span
                   key={s.stage.stageNumber}
+<<<<<<< HEAD
                   title={`Question ${s.stage.stageNumber}${isDone ? " (done)" : isCurrent ? " (current)" : " (locked)"}`}
+=======
+                  aria-label={
+                    isDone ? `Question ${s.stage.stageNumber} done` :
+                    isCurrent ? `Question ${s.stage.stageNumber} current` :
+                    `Question ${s.stage.stageNumber} locked`
+                  }
+>>>>>>> aafc26a (chore: work on algohunt dash)
                   className={`h-2 w-2 rounded-full ${
                     isDone ? "bg-green-500" :
                     isCurrent ? "bg-bronze" :
@@ -161,6 +235,7 @@ export default async function ChallengePage() {
             })}
           </div>
         </div>
+<<<<<<< HEAD
 
         {/* Right: Solved QR action / links / team code */}
         <div className="flex shrink-0 items-center gap-2">
@@ -208,6 +283,15 @@ export default async function ChallengePage() {
       )}
 
       {/* ══════════ Main Resizable Workspace ══════════ */}
+=======
+        {cur.stage.isFinal && (
+          <p className="mt-1 text-center text-xs font-medium text-bronze">
+            FINAL QUESTION — Solve it to finish AlgoHunt 2.0. No code needed after this.
+          </p>
+        )}
+      </div>
+
+>>>>>>> aafc26a (chore: work on algohunt dash)
       <ChallengeWorkspace
         view={view}
         teamCode={team.teamCode}

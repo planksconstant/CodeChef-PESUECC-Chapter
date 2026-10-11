@@ -13,7 +13,11 @@ interface VerdictPanelProps {
   onRetry?: () => void;
 }
 
+<<<<<<< HEAD
 export default function VerdictPanel({ result, stageNumber, isFinal: _isFinal, onRetry }: VerdictPanelProps) {
+=======
+export default function VerdictPanel({ result, stageNumber, isFinal, onRetry }: VerdictPanelProps) {
+>>>>>>> aafc26a (chore: work on algohunt dash)
   // Network/connection error (submission is null)
   if (!result || (result as { submission?: null }).submission === null) {
     return (

@@ -55,8 +55,12 @@ export async function POST(req: Request): Promise<NextResponse> {
   return ok(result.result);
 }
 
+<<<<<<< HEAD
 export async function GET(_req: Request): Promise<NextResponse> {
   void _req;
+=======
+export async function GET(req: Request): Promise<NextResponse> {
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const ctx = await requireTeam();
   if (!("team" in ctx)) return ctx as NextResponse;
 

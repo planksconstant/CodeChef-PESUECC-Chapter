@@ -2,9 +2,14 @@
  * AlgoHunt challenge server helpers (Module 2).
  * Loads the current challenge, builds view models, and prepares judge inputs.
  */
+<<<<<<< HEAD
 import { sql } from "drizzle-orm";
 import { getDb } from "@/server/db";
 import type { AhChallenge, AhStage } from "@/lib/algohunt/_mock-db-types";
+=======
+import { getDb } from "@/server/db";
+import type { AhChallenge, AhStage, AhTestCase } from "@/lib/algohunt/_mock-db-types";
+>>>>>>> aafc26a (chore: work on algohunt dash)
 import type { ChallengeView, LanguageOption } from "@/lib/algohunt/types";
 import { parseTimeLimitMs, parseMemoryLimitBytes } from "@/lib/challenges";
 import type { Checker, TestCase, ChallengeContent, RenderedContent } from "@/lib/challenges";
@@ -77,7 +82,11 @@ export async function getStageChallenge(stageId: string): Promise<StageChallenge
   // TODO(M1): Replace with proper Drizzle join once M1's schema.ts is merged.
   try {
     const rows = await db.run(
+<<<<<<< HEAD
       sql`SELECT s.id as stage_id, s.event_id, s.stage_number, s.challenge_id, s.points,
+=======
+      `SELECT s.id as stage_id, s.event_id, s.stage_number, s.challenge_id, s.points,
+>>>>>>> aafc26a (chore: work on algohunt dash)
               s.is_final, s.enabled, s.created_at as stage_created_at, s.updated_at as stage_updated_at,
               c.id as ch_id, c.event_id as ch_event_id, c.slug, c.title, c.difficulty,
               c.statement, c.input_format, c.output_format, c.constraints, c.samples,
@@ -87,6 +96,7 @@ export async function getStageChallenge(stageId: string): Promise<StageChallenge
               c.created_at as ch_created_at, c.updated_at as ch_updated_at
        FROM ah_stages s
        JOIN ah_challenges c ON c.id = s.challenge_id
+<<<<<<< HEAD
        WHERE s.id = ${stageId}
        LIMIT 1`,
     );
@@ -149,6 +159,19 @@ export async function getStageChallenge(stageId: string): Promise<StageChallenge
   }
 
   return null;
+=======
+       WHERE s.id = ?
+       LIMIT 1` as unknown as Parameters<typeof db.run>[0],
+      [stageId],
+    );
+    const row = (rows as unknown as { rows?: unknown[] })?.rows?.[0] as Record<string, unknown> | undefined;
+    if (!row) return null;
+    return rowToStageChallenge(row);
+  } catch (e) {
+    console.error("[algohunt:challenges] getStageChallenge error:", e);
+    return null;
+  }
+>>>>>>> aafc26a (chore: work on algohunt dash)
 }
 
 function rowToStageChallenge(row: Record<string, unknown>): StageChallenge {
@@ -201,9 +224,16 @@ export async function loadJudgeInput(challenge: AhChallenge): Promise<JudgeInput
   let rawTests: TestCase[] = [];
   try {
     const rows = await db.run(
+<<<<<<< HEAD
       sql`SELECT input, output FROM ah_test_cases
        WHERE challenge_id = ${challenge.id}
        ORDER BY idx ASC`,
+=======
+      `SELECT input, output FROM ah_test_cases
+       WHERE challenge_id = ?
+       ORDER BY idx ASC` as unknown as Parameters<typeof db.run>[0],
+      [challenge.id],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const resultRows = (rows as unknown as { rows?: unknown[] })?.rows ?? [];
     rawTests = resultRows.map((r) => {
@@ -218,6 +248,7 @@ export async function loadJudgeInput(challenge: AhChallenge): Promise<JudgeInput
     rawTests = [];
   }
 
+<<<<<<< HEAD
   // Fallback to parsed sample cases if no test cases are found in the DB
   if (rawTests.length === 0 && challenge.samples) {
     type RawSample = { input?: string; output?: string };
@@ -227,6 +258,8 @@ export async function loadJudgeInput(challenge: AhChallenge): Promise<JudgeInput
       .map((s) => ({ input: s.input as string, output: s.output as string }));
   }
 
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const checker = normalizeChecker(safeJson(challenge.checker, {}));
   const rawMs = parseTimeLimitMs(challenge.timeLimit, 2000);
   const rawBytes = parseMemoryLimitBytes(challenge.memoryLimit, DEFAULT_MEM_BYTES);
@@ -243,7 +276,11 @@ export async function loadJudgeInput(challenge: AhChallenge): Promise<JudgeInput
  */
 export function allowedLanguages(challenge: AhChallenge): LanguageOption[] {
   const challengeLangs: string[] | null = challenge.languages
+<<<<<<< HEAD
     ? safeJson<string[] | null>(challenge.languages, null)
+=======
+    ? safeJson<string[]>(challenge.languages, null)
+>>>>>>> aafc26a (chore: work on algohunt dash)
     : null;
 
   return ARENA_LANGUAGES.filter((l) => {
@@ -323,18 +360,28 @@ export function toChallengeContent(challenge: AhChallenge): ChallengeContent {
     contentHtml = normalizeRenderedContent(safeJson(challenge.contentHtml, {}));
   } else {
     contentHtml = {
+<<<<<<< HEAD
       statement: `<p>${challenge.statement || ""}</p>`,
       inputFormat: challenge.inputFormat ? `<p>${challenge.inputFormat}</p>` : "",
       outputFormat: challenge.outputFormat ? `<p>${challenge.outputFormat}</p>` : "",
       constraints: challenge.constraints ? `<p>${challenge.constraints}</p>` : "",
+=======
+      statement: "",
+      inputFormat: "",
+      outputFormat: "",
+      constraints: "",
+>>>>>>> aafc26a (chore: work on algohunt dash)
       sampleExplanations: [],
     };
   }
 
+<<<<<<< HEAD
   if (!contentHtml.statement && challenge.statement) {
     contentHtml.statement = `<p>${challenge.statement}</p>`;
   }
 
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
   type RawSample = { input?: string; output?: string; explanation?: string };
   const rawSamples: RawSample[] = safeJson<RawSample[]>(challenge.samples, []);
   const samples = rawSamples.map((s) => ({

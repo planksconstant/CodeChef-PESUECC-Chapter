@@ -12,7 +12,10 @@ import type { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function GET(_req: Request): Promise<NextResponse> {
+<<<<<<< HEAD
   void _req;
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const ctx = await requireTeam();
   if (!("team" in ctx)) return ctx as NextResponse;
 

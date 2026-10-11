@@ -2,7 +2,10 @@
  * AlgoHunt submission server helpers (Module 2).
  * Handles creating, judging, and listing submissions.
  */
+<<<<<<< HEAD
 import { sql } from "drizzle-orm";
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
 import { getDb } from "@/server/db";
 import type { AhSubmission } from "@/lib/algohunt/_mock-db-types";
 import type { SubmissionView, SubmitResult, ErrorCode } from "@/lib/algohunt/types";
@@ -50,6 +53,7 @@ async function insertSubmission(row: AhSubmission): Promise<AhSubmission | null>
   try {
     // Insert with idempotency: ON CONFLICT DO NOTHING on (teamId, clientRequestId)
     const result = await db.run(
+<<<<<<< HEAD
       sql`INSERT INTO ah_submissions
         (id, event_id, team_id, stage_id, challenge_id, language, code, status,
          verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
@@ -57,6 +61,27 @@ async function insertSubmission(row: AhSubmission): Promise<AhSubmission | null>
        VALUES (${row.id}, ${row.eventId}, ${row.teamId}, ${row.stageId}, ${row.challengeId}, ${row.language}, ${row.code}, ${row.status}, NULL, NULL, NULL, NULL, NULL, NULL, ${row.clientRequestId}, ${row.createdAt}, NULL)
        ON CONFLICT (team_id, client_request_id) DO NOTHING
        RETURNING id`,
+=======
+      `INSERT INTO ah_submissions
+        (id, event_id, team_id, stage_id, challenge_id, language, code, status,
+         verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
+         created_at, finished_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, ?, ?, NULL)
+       ON CONFLICT (team_id, client_request_id) DO NOTHING
+       RETURNING id` as unknown as Parameters<typeof db.run>[0],
+      [
+        row.id,
+        row.eventId,
+        row.teamId,
+        row.stageId,
+        row.challengeId,
+        row.language,
+        row.code,
+        row.status,
+        row.clientRequestId,
+        row.createdAt,
+      ],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const rows = (result as unknown as { rows?: unknown[] })?.rows ?? [];
     if (rows.length === 0) {
@@ -70,6 +95,7 @@ async function insertSubmission(row: AhSubmission): Promise<AhSubmission | null>
   }
 }
 
+<<<<<<< HEAD
 export async function getSubmissionById(id: string): Promise<AhSubmission | null> {
   const db = getDb();
   try {
@@ -78,6 +104,17 @@ export async function getSubmissionById(id: string): Promise<AhSubmission | null
               verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
               created_at, finished_at
        FROM ah_submissions WHERE id = ${id} LIMIT 1`,
+=======
+async function getSubmissionById(id: string): Promise<AhSubmission | null> {
+  const db = getDb();
+  try {
+    const result = await db.run(
+      `SELECT id, event_id, team_id, stage_id, challenge_id, language, code, status,
+              verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
+              created_at, finished_at
+       FROM ah_submissions WHERE id = ? LIMIT 1` as unknown as Parameters<typeof db.run>[0],
+      [id],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const rows = (result as unknown as { rows?: unknown[] })?.rows ?? [];
     const row = rows[0] as Record<string, unknown> | undefined;
@@ -95,12 +132,22 @@ async function getSubmissionByRequestId(
   const db = getDb();
   try {
     const result = await db.run(
+<<<<<<< HEAD
       sql`SELECT id, event_id, team_id, stage_id, challenge_id, language, code, status,
               verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
               created_at, finished_at
        FROM ah_submissions
        WHERE team_id = ${teamId} AND client_request_id = ${clientRequestId}
        LIMIT 1`,
+=======
+      `SELECT id, event_id, team_id, stage_id, challenge_id, language, code, status,
+              verdict, passed, total, failed_on, detail, runtime_ms, client_request_id,
+              created_at, finished_at
+       FROM ah_submissions
+       WHERE team_id = ? AND client_request_id = ?
+       LIMIT 1` as unknown as Parameters<typeof db.run>[0],
+      [teamId, clientRequestId],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const rows = (result as unknown as { rows?: unknown[] })?.rows ?? [];
     const row = rows[0] as Record<string, unknown> | undefined;
@@ -126,10 +173,28 @@ async function updateSubmission(
 ): Promise<void> {
   const db = getDb();
   await db.run(
+<<<<<<< HEAD
     sql`UPDATE ah_submissions
      SET status = ${fields.status}, verdict = ${fields.verdict ?? null}, passed = ${fields.passed ?? null}, total = ${fields.total ?? null}, failed_on = ${fields.failedOn ?? null},
          detail = ${fields.detail ?? null}, runtime_ms = ${fields.runtimeMs ?? null}, finished_at = ${fields.finishedAt ?? null}
      WHERE id = ${id}`,
+=======
+    `UPDATE ah_submissions
+     SET status = ?, verdict = ?, passed = ?, total = ?, failed_on = ?,
+         detail = ?, runtime_ms = ?, finished_at = ?
+     WHERE id = ?` as unknown as Parameters<typeof db.run>[0],
+    [
+      fields.status,
+      fields.verdict ?? null,
+      fields.passed ?? null,
+      fields.total ?? null,
+      fields.failedOn ?? null,
+      fields.detail ?? null,
+      fields.runtimeMs ?? null,
+      fields.finishedAt ?? null,
+      id,
+    ],
+>>>>>>> aafc26a (chore: work on algohunt dash)
   );
 }
 
@@ -138,10 +203,18 @@ async function reclaimFailedSubmission(id: string): Promise<boolean> {
   const db = getDb();
   try {
     const result = await db.run(
+<<<<<<< HEAD
       sql`UPDATE ah_submissions
        SET status = 'RUNNING'
        WHERE id = ${id} AND status = 'FAILED'
        RETURNING id`,
+=======
+      `UPDATE ah_submissions
+       SET status = 'RUNNING'
+       WHERE id = ? AND status = 'FAILED'
+       RETURNING id` as unknown as Parameters<typeof db.run>[0],
+      [id],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const rows = (result as unknown as { rows?: unknown[] })?.rows ?? [];
     return rows.length > 0;
@@ -320,6 +393,7 @@ export async function createAndJudgeSubmission(p: {
     memLimitBytes: judgeInput.memLimitBytes,
   });
 
+<<<<<<< HEAD
   let effectiveRes = res;
   if (res.verdict === "ERR" && process.env.NODE_ENV === "development") {
     console.warn("[algohunt:submissions] Judge offline in dev mode; simulating submission verdict.");
@@ -330,21 +404,35 @@ export async function createAndJudgeSubmission(p: {
       : { verdict: "WA", passed: 0, total, failedOn: 1 };
   }
 
+=======
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const finishedAt = Date.now();
   const runtimeMs = judgeInput.tests.length > 0 ? (finishedAt - now) : null;
 
   // Step 6: Update the submission row by verdict
+<<<<<<< HEAD
   if (effectiveRes.verdict === "ERR") {
     await updateSubmission(subRow.id, {
       status: "FAILED",
       verdict: "ERR",
       detail: effectiveRes.message ?? null, // internal, never returned to team
+=======
+  if (res.verdict === "ERR") {
+    await updateSubmission(subRow.id, {
+      status: "FAILED",
+      verdict: "ERR",
+      detail: res.message ?? null, // internal, never returned to team
+>>>>>>> aafc26a (chore: work on algohunt dash)
       finishedAt,
     });
     return { ok: false, code: "JUDGE_UNAVAILABLE" };
   }
 
+<<<<<<< HEAD
   if (effectiveRes.verdict === "NO_TESTS") {
+=======
+  if (res.verdict === "NO_TESTS") {
+>>>>>>> aafc26a (chore: work on algohunt dash)
     await updateSubmission(subRow.id, {
       status: "FAILED",
       verdict: "NO_TESTS",
@@ -362,6 +450,7 @@ export async function createAndJudgeSubmission(p: {
   }
 
   // Normal verdict (AC/WA/TLE/MLE/RE/CE)
+<<<<<<< HEAD
   const detail = effectiveRes.detail ? effectiveRes.detail.slice(0, 4000) : null;
   await updateSubmission(subRow.id, {
     status: "DONE",
@@ -369,6 +458,15 @@ export async function createAndJudgeSubmission(p: {
     passed: effectiveRes.passed,
     total: effectiveRes.total,
     failedOn: effectiveRes.failedOn ?? null,
+=======
+  const detail = res.detail ? res.detail.slice(0, 4000) : null;
+  await updateSubmission(subRow.id, {
+    status: "DONE",
+    verdict: res.verdict,
+    passed: res.passed,
+    total: res.total,
+    failedOn: res.failedOn ?? null,
+>>>>>>> aafc26a (chore: work on algohunt dash)
     detail,
     runtimeMs,
     finishedAt,
@@ -380,12 +478,20 @@ export async function createAndJudgeSubmission(p: {
     actorType: "TEAM",
     actorId: team.id,
     action: "submission.judged",
+<<<<<<< HEAD
     metadata: { verdict: effectiveRes.verdict, challengeId: sc.challenge.id },
+=======
+    metadata: { verdict: res.verdict, challengeId: sc.challenge.id },
+>>>>>>> aafc26a (chore: work on algohunt dash)
   });
 
   // Step 7: recordChallengeSolved if AC
   let eng: { alreadySolved: boolean; finished: boolean } | undefined;
+<<<<<<< HEAD
   if (effectiveRes.verdict === "AC") {
+=======
+  if (res.verdict === "AC") {
+>>>>>>> aafc26a (chore: work on algohunt dash)
     eng = await recordChallengeSolved({
       ctx,
       stageId: cur.stage.id,
@@ -395,7 +501,11 @@ export async function createAndJudgeSubmission(p: {
 
   // Step 8: Build SubmitResult
   const stageNum = cur.stage.stageNumber;
+<<<<<<< HEAD
   const challengeSolved = effectiveRes.verdict === "AC";
+=======
+  const challengeSolved = res.verdict === "AC";
+>>>>>>> aafc26a (chore: work on algohunt dash)
   const finished = eng?.finished ?? false;
   const needsCode = challengeSolved && !cur.stage.isFinal;
 
@@ -403,17 +513,28 @@ export async function createAndJudgeSubmission(p: {
   const finalRow: AhSubmission = {
     ...subRow,
     status: "DONE",
+<<<<<<< HEAD
     verdict: effectiveRes.verdict,
     passed: effectiveRes.passed,
     total: effectiveRes.total,
     failedOn: effectiveRes.failedOn ?? null,
+=======
+    verdict: res.verdict,
+    passed: res.passed,
+    total: res.total,
+    failedOn: res.failedOn ?? null,
+>>>>>>> aafc26a (chore: work on algohunt dash)
     detail,
     runtimeMs,
     finishedAt,
   };
 
   const view = toSubmissionView(finalRow, stageNum);
+<<<<<<< HEAD
   const message = buildMessage(effectiveRes.verdict, effectiveRes.failedOn, finished);
+=======
+  const message = buildMessage(res.verdict, res.failedOn, finished);
+>>>>>>> aafc26a (chore: work on algohunt dash)
 
   return {
     ok: true,
@@ -469,16 +590,27 @@ export async function listTeamSubmissions(p: {
   try {
     // We need stageNumber to build SubmissionView — fetch it with a join
     const result = await db.run(
+<<<<<<< HEAD
       sql`SELECT s.id, s.event_id, s.team_id, s.stage_id, s.challenge_id,
+=======
+      `SELECT s.id, s.event_id, s.team_id, s.stage_id, s.challenge_id,
+>>>>>>> aafc26a (chore: work on algohunt dash)
               s.language, s.code, s.status, s.verdict, s.passed, s.total,
               s.failed_on, s.detail, s.runtime_ms, s.client_request_id,
               s.created_at, s.finished_at,
               st.stage_number
        FROM ah_submissions s
        JOIN ah_stages st ON st.id = s.stage_id
+<<<<<<< HEAD
        WHERE s.team_id = ${p.teamId} AND s.stage_id = ${p.stageId}
        ORDER BY s.created_at DESC
        LIMIT ${limit}`,
+=======
+       WHERE s.team_id = ? AND s.stage_id = ?
+       ORDER BY s.created_at DESC
+       LIMIT ?` as unknown as Parameters<typeof db.run>[0],
+      [p.teamId, p.stageId, limit],
+>>>>>>> aafc26a (chore: work on algohunt dash)
     );
     const rows = (result as unknown as { rows?: unknown[] })?.rows ?? [];
     return rows.map((r) => {
